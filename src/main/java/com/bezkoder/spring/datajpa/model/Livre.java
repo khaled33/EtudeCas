@@ -4,14 +4,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-	import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
-	import javax.persistence.GenerationType;
-	import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-	import javax.persistence.Table;
+	import javax.persistence.*;
 	import javax.xml.bind.annotation.XmlRootElement;
 
 	import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -57,7 +50,7 @@ import javax.persistence.ManyToOne;
 		//resumé
 		@Column(name = "resume")
 		private String  resume;
-		@ManyToMany()
+		@ManyToMany(cascade = CascadeType.ALL)
 		Set<Auteur> auteurs;
 	
 		
